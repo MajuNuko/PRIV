@@ -1,0 +1,40 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MajuNuko/UPDATEDLUKISTREAMABLE/main/phonk"))()
+DaHoodSettings.Prediction = 0.11225533
+Aiming.TargetPart = {"Head", "UpperTorso", "LowerTorso", "HumanoidRootPart", "RightFoot", "LeftFoot"}
+Aiming.FOV = 42.29
+Aiming.FOVSides = 125
+Aiming.HitChance = 400
+Aiming.ShowFOV = true
+--EPICFORTNITELOCK--
+local RunService = game:GetService("RunService")
+RunService.Heartbeat:Connect(function()
+    pcall(function()
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                local hrp = v.Character.HumanoidRootPart
+                hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)    
+                hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)   
+            end
+        end
+    end)
+end)
+ local function callback(Text)
+ if Text == "Button1 text" then
+  print ("Answer")
+elseif Text == ("Button2 text") then
+ print ("Answer2")
+ end
+end
+
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "Lukistreamable";
+ Text = "Are u legit ?";
+ Icon = "";
+ Duration = 10;
+ Button1 = "yes";
+ Button2 = "FUCK NO";
+ Callback = NotificationBindable;
+})
